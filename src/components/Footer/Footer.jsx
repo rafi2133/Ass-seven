@@ -27,7 +27,7 @@ const Footer = () => {
                     </a>
                 </div>
             </nav>
-            <div className='flex justify-between text-white w-10/12 mx-auto'>
+            <div className='flex justify-between text-white w-10/12 mx-auto border-t-2 border-[#235443] p-4'>
                 <p>Copyright © 2026 KeenKeeper. All rights reserved.</p>
 
                 <ul className="flex gap-4">
