@@ -6,7 +6,7 @@ import x from '../../assets/twitter.png'
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center  bg-[#244D3F] text-base-content rounded p-10">
+        <footer className="footer footer-horizontal footer-center  bg-[#244D3F] text-base-content rounded p-10 mt-10">
            <div className="w-10/12 mx-auto">
              <h2 className='font-bold text-4xl text-white'>KeenKeeper</h2>
             <p className='font-semibold text-white mt-4'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>

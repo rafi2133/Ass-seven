@@ -1,15 +1,19 @@
 import { NavLink } from 'react-router';
+import logo from '../../assets/logo.png'
+import { RiHome2Line } from 'react-icons/ri';
+import { IoTimeOutline } from 'react-icons/io5';
+import { BsGraphUp } from 'react-icons/bs';
 
 
 const Navbar = () => {
     const navLinks = <>
         <li>
             <NavLink
-                className={({ isActive }) => isActive ? "!bg-[#244D3F] !text-white  rounded-md px-3 py-2" : "px-3 py-2 hover:bg-gray-100"}
+                className={({ isActive }) => isActive ? "!bg-[#244D3F] !text-white  rounded-md px-3 py-2 " : "px-3 py-2 hover:bg-gray-100 "}
                 to={'/'}
                 end
             >
-                Home
+                <RiHome2Line />Home
             </NavLink>
         </li>
         <li>
@@ -17,7 +21,7 @@ const Navbar = () => {
                 className={({ isActive }) => isActive ? "!text-white !bg-[#244D3F] rounded-md px-3 py-2" : "px-3 py-2 hover:bg-gray-100"}
                 to={'/timeline'}
             >
-                Timeline
+                <IoTimeOutline />Timeline
             </NavLink>
         </li>
         <li>
@@ -25,10 +29,9 @@ const Navbar = () => {
                 className={({ isActive }) => isActive ? "!text-white !bg-[#244D3F] rounded-md px-3 py-2" : "px-3 py-2 hover:bg-gray-100"}
                 to={'/status'}
             >
-                Status
+                <BsGraphUp />Status
             </NavLink>
         </li>
-
     </>
 
 
@@ -45,7 +48,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a href='/' className=" text-3xl"><span className='font-bold'>Keen</span><span className='text-[#244D3F]'>Keeper</span></a>
+                <a href='/' className=" text-3xl"><img src={logo} alt="" /></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-4">

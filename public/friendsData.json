@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "picture": "https://randomuser.me/api/portraits/men/1.jpg",
+    "email": "john.doe@example.com",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["college", "close friend"],
+    "bio": "Met in university. Love hiking together and discussing tech.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 2,
+    "name": "Emma Watson",
+    "picture": "https://randomuser.me/api/portraits/women/2.jpg",
+    "email": "emma.w@example.com",
+    "days_since_contact": 25,
+    "status": "overdue",
+    "tags": ["work", "mentor"],
+    "bio": "Former colleague who taught me a lot about leadership.",
+    "goal": 14,
+    "next_due_date": "2025-07-05"
+  },
+  {
+    "id": 3,
+    "name": "Michael Chen",
+    "picture": "https://randomuser.me/api/portraits/men/3.jpg",
+    "email": "michael.chen@example.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["gym", "workout buddy"],
+    "bio": "My gym partner. Keeps me motivated to stay fit.",
+    "goal": 7,
+    "next_due_date": "2025-07-25"
+  },
+  {
+    "id": 4,
+    "name": "Sarah Johnson",
+    "picture": "https://randomuser.me/api/portraits/women/4.jpg",
+    "email": "sarah.j@example.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["childhood", "best friend"],
+    "bio": "Known her since kindergarten. She's like a sister to me.",
+    "goal": 14,
+    "next_due_date": "2025-07-12"
+  },
+  {
+    "id": 5,
+    "name": "David Kumar",
+    "picture": "https://randomuser.me/api/portraits/men/5.jpg",
+    "email": "david.k@example.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["coding", "hackathon"],
+    "bio": "Met at a coding bootcamp. We build side projects together.",
+    "goal": 7,
+    "next_due_date": "2025-07-27"
+  },
+  {
+    "id": 6,
+    "name": "Lisa Rodriguez",
+    "picture": "https://randomuser.me/api/portraits/women/6.jpg",
+    "email": "lisa.r@example.com",
+    "days_since_contact": 9,
+    "status": "almost due",
+    "tags": ["travel", "adventure"],
+    "bio": "Travel enthusiast. We plan trips and explore new places.",
+    "goal": 14,
+    "next_due_date": "2025-07-22"
+  },
+  {
+    "id": 7,
+    "name": "Alex Thompson",
+    "picture": "https://randomuser.me/api/portraits/men/7.jpg",
+    "email": "alex.t@example.com",
+    "days_since_contact": 30,
+    "status": "overdue",
+    "tags": ["college", "roommate"],
+    "bio": "My college roommate. We survived finals together.",
+    "goal": 21,
+    "next_due_date": "2025-06-30"
+  },
+  {
+    "id": 8,
+    "name": "Olivia Martinez",
+    "picture": "https://randomuser.me/api/portraits/women/8.jpg",
+    "email": "olivia.m@example.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["coffee", "book club"],
+    "bio": "We share a love for books and good coffee.",
+    "goal": 7,
+    "next_due_date": "2025-07-28"
+  },
+  {
+    "id": 9,
+    "name": "James Wilson",
+    "picture": "https://randomuser.me/api/portraits/men/9.jpg",
+    "email": "james.w@example.com",
+    "days_since_contact": 16,
+    "status": "overdue",
+    "tags": ["neighbor", "gardening"],
+    "bio": "Next-door neighbor. We help each other with gardening.",
+    "goal": 14,
+    "next_due_date": "2025-07-14"
+  },
+  {
+    "id": 10,
+    "name": "Sofia Lee",
+    "picture": "https://randomuser.me/api/portraits/women/10.jpg",
+    "email": "sofia.lee@example.com",
+    "days_since_contact": 7,
+    "status": "on-track",
+    "tags": ["art", "creative"],
+    "bio": "Fellow artist. We inspire each other's creative journey.",
+    "goal": 14,
+    "next_due_date": "2025-07-23"
+  }
+]
