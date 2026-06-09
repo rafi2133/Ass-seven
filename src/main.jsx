@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 import MainLayout from './layout/MainLayout';
 import Homepage from './pages/homepage/homepage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import TimeLine from './pages/TimeLine/TimeLine';
+import Status from './pages/Status/Status';
 
 
 
@@ -18,7 +20,14 @@ const router = createBrowserRouter([
        index: true,
        element: <Homepage></Homepage>
       },
-      
+      {
+        path: '/timeline',
+        element: <TimeLine></TimeLine>
+      },
+      {
+        path:'/status',
+        element: <Status></Status>
+      }
     ],
     errorElement:<ErrorPage></ErrorPage>
   },

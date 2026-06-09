@@ -1,13 +1,37 @@
-import React from 'react';
+import { NavLink } from 'react-router';
+
 
 const Navbar = () => {
     const navLinks = <>
-      <li><a>Home</a></li>
-        <li><a>Timeline</a></li>
-        <li><a>status </a></li>
+        <li>
+            <NavLink
+                className={({ isActive }) => isActive ? "!bg-[#244D3F] !text-white  rounded-md px-3 py-2" : "px-3 py-2 hover:bg-gray-100"}
+                to={'/'}
+                end
+            >
+                Home
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                className={({ isActive }) => isActive ? "!text-white !bg-[#244D3F] rounded-md px-3 py-2" : "px-3 py-2 hover:bg-gray-100"}
+                to={'/timeline'}
+            >
+                Timeline
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                className={({ isActive }) => isActive ? "!text-white !bg-[#244D3F] rounded-md px-3 py-2" : "px-3 py-2 hover:bg-gray-100"}
+                to={'/status'}
+            >
+                Status
+            </NavLink>
+        </li>
+
     </>
-      
-    
+
+
     return (
         <div className="navbar bg-base-100 shadow-sm justify-between">
             <div className="navbar-start">
@@ -18,17 +42,17 @@ const Navbar = () => {
                     <ul
                         tabIndex="-1"
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                       {navLinks}
+                        {navLinks}
                     </ul>
                 </div>
-                <a href='/' className=" text-xl">KeenKeeper</a>
+                <a href='/' className=" text-3xl"><span className='font-bold'>Keen</span><span className='text-[#244D3F]'>Keeper</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                     {navLinks}
+                <ul className="menu menu-horizontal px-1 gap-4">
+                    {navLinks}
                 </ul>
             </div>
-           
+
         </div>
     );
 };
