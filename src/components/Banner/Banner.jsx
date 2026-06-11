@@ -13,7 +13,7 @@ const Banner = () => {
                             Your personal shelf of meaningful connections. Browse, tend, and nurture the <br />
                             relationships that matter most.
                         </p>
-                        <button className="btn bg-[#3E6356] text-white hover:text-black"><AiOutlinePlus />Add A Friend</button>
+                        <button className="btn bg-[#3E6356] text-white hover:bg-[#6ec2a5]"><AiOutlinePlus />Add A Friend</button>
                     </div>
                 </div>
             </div>
