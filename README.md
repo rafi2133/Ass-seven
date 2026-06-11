@@ -4,7 +4,7 @@ A comprehensive web application to help you track, nurture, and maintain meaning
 
 ## 🚀 Live Demo
 
-[Add your live demo link here if deployed]
+https://ass-seven.netlify.app/
 
 ## 📋 Description
 
@@ -47,4 +47,4 @@ Ass-Seven is a relationship management tool designed to help users maintain cons
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/Ass-Seven.git
+git clone https://github.com/rafi2133/Ass-seven
