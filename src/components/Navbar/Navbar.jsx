@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import logo from '../../assets/logo.png'
 import { RiHome2Line } from 'react-icons/ri';
 import { IoTimeOutline } from 'react-icons/io5';
@@ -48,7 +48,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a href='/' className=" text-3xl"><img src={logo} alt="" /></a>
+                <Link href='/' className=" text-3xl"><img src={logo} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-4">

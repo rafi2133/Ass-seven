@@ -1,16 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { FriendContext } from '../../components/context/FriendContext';
 import { Pie, PieChart, Cell, Legend, Tooltip } from 'recharts';
 
 const Status = () => {
     const { contacted, texted, called } = useContext(FriendContext);
-    const [isAnimationActive, setIsAnimationActive] = useState(true);
 
     // Prepare data for the pie chart
     const chartData = [
-        { name: 'Voice Calls', value: contacted.length, color: '#37A163' },
+        { name: 'Voice Calls', value: called.length, color: '#37A163' },
         { name: 'Texts', value: texted.length, color: '#7E35E1' },
-        { name: 'Video Calls', value: called.length, color: '#244D3F' }
+        { name: 'Video Calls', value: contacted.length, color: '#244D3F' }
     ];
 
     // Filter out zero values
@@ -21,7 +20,7 @@ const Status = () => {
 
     return (
         <div className="w-10/12 mx-auto py-8">
-            <h2 className="font-bold text-2xl mb-6 text-center">Interaction Statistics</h2>
+            <h2 className="font-bold text-2xl mb-6 text-center">Friendship Analytics</h2>
 
             {filteredData.length === 0 ? (
                 <div className="text-center py-10 bg-gray-50 rounded-lg">
@@ -33,6 +32,13 @@ const Status = () => {
                     {/* Pie Chart */}
                     <div className="bg-white rounded-lg shadow-md p-6">
                         <PieChart width={600} height={400}>
+                            <text
+                                x={20}  
+                                y={20}   
+                                className="text-xs font-bold "
+                            >
+                                By Interaction Type
+                            </text>
                             <Pie
                                 data={filteredData}
                                 innerRadius="60%"
@@ -41,7 +47,7 @@ const Status = () => {
                                 paddingAngle={5}
                                 dataKey="value"
                                 nameKey="name"
-                                isAnimationActive={isAnimationActive}
+                                isAnimationActive={true}  // Just set to true directly
                                 label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
                                 labelLine={true}
                             >
