@@ -7,9 +7,10 @@ export const FriendContext = createContext();
 
 
 const FriendProvider = ({children}) => {
-      const [contacted, setContacted] = useState(()=>getAllFromLocalDB());
-      const [texted, setTexted] = useState(()=>getAllFromLocalDB());
-      const [called, setCalled] = useState(()=>getAllFromLocalDB());
+     // ✅ Initialize state with data from localStorage
+const [contacted, setContacted] = useState(() => getAllFromLocalDB('voiceCalls'));
+const [texted, setTexted] = useState(() => getAllFromLocalDB('texts'));
+const [called, setCalled] = useState(() => getAllFromLocalDB('videoCalls'));
 
 
     //   useEffect(()=>{
@@ -21,13 +22,11 @@ const FriendProvider = ({children}) => {
     //   },[])
 
     const handleCall = (currentFriend) =>{
-
-        addToLocalDB(currentFriend);
-
         const isExistFriend = contacted.find(friend=> friend.id === currentFriend.id)
         if (!isExistFriend) {
             const friendWithDate = { ...currentFriend, date: new Date().toLocaleString() };
             setContacted([...contacted, friendWithDate]);
+            addToLocalDB(friendWithDate, 'voiceCalls');
             toast.success(`Called ${currentFriend.name}`);
         } else {
             toast.info(`Already called ${currentFriend.name} before`);
@@ -36,11 +35,11 @@ const FriendProvider = ({children}) => {
 
 
     const handlText = (currentFriend) =>{
-        addToLocalDB(currentFriend);
         const isExistFriend = texted.find(friend=>friend.id === currentFriend.id)
         if(!isExistFriend){
             const friendWithDate = { ...currentFriend, date: new Date().toLocaleString() };
             setTexted([...texted,friendWithDate]);
+             addToLocalDB(friendWithDate, 'texts');
             toast.success(`Text Send ${currentFriend.name}`)
         }else{
             toast.info(`Already texted ${currentFriend.name} before`)
@@ -48,11 +47,11 @@ const FriendProvider = ({children}) => {
     }
 
     const handleVideoCall = (currentFriend) =>{
-        addToLocalDB(currentFriend);
         const isExistFriend =called.find(friend=>friend.id === currentFriend.id)
         if(!isExistFriend){
             const friendWithDate ={...currentFriend, date: new Date().toLocaleString()}
-            setCalled([...called,friendWithDate])
+            setCalled([...called,friendWithDate]);
+             addToLocalDB(friendWithDate, 'videoCalls');
             toast.success(` Already Video Called ${currentFriend.name}`)
         } else{
              toast.info(`Already Video Called ${currentFriend.name} before`)
