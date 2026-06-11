@@ -7,8 +7,8 @@ const Banner = () => {
             <div className="hero  mt-20">
                 <div className="hero-content flex-col lg:flex-row items-center justify-center">
 
-                    <div className='flex flex-col items-center justify-center'>
-                        <h1 className="text-5xl font-bold">Friends to keep close in your life</h1>
+                    <div className='flex flex-col items-center justify-center '>
+                        <h1 className="text-5xl font-bold mt-4">Friends to keep close in your life</h1>
                         <p className="py-6 text-center">
                             Your personal shelf of meaningful connections. Browse, tend, and nurture the <br />
                             relationships that matter most.

@@ -1,16 +1,29 @@
-import  { createContext, useState } from 'react';
+import  { createContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { addToLocalDB, getAllFromLocalDB } from '../../utils/localDb';
 
 
 export const FriendContext = createContext();
 
 
 const FriendProvider = ({children}) => {
-      const [contacted, setContacted] = useState([]);
-      const [texted, setTexted] = useState([]);
-      const [called, setCalled] = useState([]);
+      const [contacted, setContacted] = useState(()=>getAllFromLocalDB());
+      const [texted, setTexted] = useState(()=>getAllFromLocalDB());
+      const [called, setCalled] = useState(()=>getAllFromLocalDB());
+
+
+    //   useEffect(()=>{
+    //     const getAllFriendFromLocalDB= ;
+    //     console.log(getAllFriendFromLocalDB,'getAllFriendFromLocalDB'
+            
+    //     );
+        
+    //   },[])
 
     const handleCall = (currentFriend) =>{
+
+        addToLocalDB(currentFriend);
+
         const isExistFriend = contacted.find(friend=> friend.id === currentFriend.id)
         if (!isExistFriend) {
             const friendWithDate = { ...currentFriend, date: new Date().toLocaleString() };
@@ -23,6 +36,7 @@ const FriendProvider = ({children}) => {
 
 
     const handlText = (currentFriend) =>{
+        addToLocalDB(currentFriend);
         const isExistFriend = texted.find(friend=>friend.id === currentFriend.id)
         if(!isExistFriend){
             const friendWithDate = { ...currentFriend, date: new Date().toLocaleString() };
@@ -34,6 +48,7 @@ const FriendProvider = ({children}) => {
     }
 
     const handleVideoCall = (currentFriend) =>{
+        addToLocalDB(currentFriend);
         const isExistFriend =called.find(friend=>friend.id === currentFriend.id)
         if(!isExistFriend){
             const friendWithDate ={...currentFriend, date: new Date().toLocaleString()}
