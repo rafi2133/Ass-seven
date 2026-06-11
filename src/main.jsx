@@ -9,6 +9,8 @@ import ErrorPage from './pages/ErrorPage/ErrorPage';
 import TimeLine from './pages/TimeLine/TimeLine';
 import Status from './pages/Status/Status';
 import FriendCard from './components/FriendCard/FriendCard';
+import { ToastContainer } from 'react-toastify';
+import FriendProvider from './components/context/FriendContext';
 
 
 
@@ -16,33 +18,35 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    children:[
+    children: [
       {
-       index: true,
-       element: <Homepage></Homepage>
+        index: true,
+        element: <Homepage></Homepage>
       },
       {
         path: '/timeline',
         element: <TimeLine></TimeLine>
       },
       {
-        path:'/status',
+        path: '/status',
         element: <Status></Status>
       },
       {
         path: "/friendCard/:id",
         element: <FriendCard></FriendCard>,
-        loader: ()=> fetch('/friendsData.json')
+        loader: () => fetch('/friendsData.json')
       }
     ],
-    errorElement:<ErrorPage></ErrorPage>
+    errorElement: <ErrorPage></ErrorPage>
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 
-
-   <RouterProvider router={router} /> 
+    <FriendProvider>
+      <RouterProvider router={router} />
+    </FriendProvider>
+    <ToastContainer />
   </StrictMode>,
 )

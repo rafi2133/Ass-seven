@@ -4,10 +4,14 @@ import text from '../../assets/text.png'
 import vdo from '../../assets/video.png'
 import { RiDeleteBin6Line, RiNotificationSnoozeLine } from 'react-icons/ri';
 import { HiOutlineArchive } from 'react-icons/hi';
+import { useContext } from 'react';
+import { FriendContext } from '../context/FriendContext';
 const FriendCard = () => {
     const { id } = useParams();
     const friends = useLoaderData();
-    const expectedFriend = friends?.find(friend => friend.id == id); // Added optional chaining
+    const expectedFriend = friends?.find(friend => friend.id == id); 
+
+  const {handleCall, handlText,handleVideoCall} = useContext(FriendContext);
 
     // Handle case when friend is not found
     if (!expectedFriend) {
@@ -19,7 +23,7 @@ const FriendCard = () => {
         );
     }
     return (
-        <div className="grid grid-cols-6  gap-4 p-4 w-10/12 mx-auto">
+        <div className="grid grid-cols-6  gap-4 p-4 w-10/12 mx-auto my-20">
 
             <div className="col-span-2 row-span-4  ">
                 <div key={expectedFriend.id} className="block max-w-md mx-auto">
@@ -34,9 +38,9 @@ const FriendCard = () => {
                                 />
                             </div>
                             {/* Name */}
-                            <h3 className="font-semibold text-gray-800 text-center text-xl mb-2">
+                            <h2 className="font-semibold text-gray-800 text-center text-xl mb-2">
                                 {expectedFriend.name}
-                            </h3>
+                            </h2>
 
                             {/* Status badge */}
                             <div className="flex justify-center">
@@ -130,20 +134,20 @@ const FriendCard = () => {
             <div className="border col-span-4 row-span-3 rounded-lg p-6 bg-white shadow-sm">
                 <h2 className='font-bold text-xl text-gray-800 mb-4'>Quick Check-In</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div className="border rounded-lg bg-[#F8FAFC] p-4 text-center hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-[#3E6356] hover:text-white group">
+                    <button onClick={()=>handleCall(expectedFriend)} className="border rounded-lg bg-[#F8FAFC] p-4 text-center hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-[#3E6356] hover:text-white group">
                         <img src={call} alt="Call" className="w-8 h-8 mx-auto mb-2 group-hover:filter group-hover:brightness-0 group-hover:invert" />
                         <p className="font-medium text-gray-700 group-hover:text-white">Call</p>
-                    </div>
+                    </button>
 
-                    <div className="border rounded-lg bg-[#F8FAFC] p-4 text-center hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-[#3E6356] hover:text-white group">
+                    <button onClick={()=>handlText(expectedFriend)} className="border rounded-lg bg-[#F8FAFC] p-4 text-center hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-[#3E6356] hover:text-white group">
                         <img src={text} alt="Text" className="w-8 h-8 mx-auto mb-2 group-hover:filter group-hover:brightness-0 group-hover:invert" />
                         <p className="font-medium text-gray-700 group-hover:text-white">Text</p>
-                    </div>
+                    </button>
 
-                    <div className="border rounded-lg bg-[#F8FAFC] p-4 text-center hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-[#3E6356] hover:text-white group">
+                    <button onClick={()=>handleVideoCall(expectedFriend)}  className="border rounded-lg bg-[#F8FAFC] p-4 text-center hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-[#3E6356] hover:text-white group">
                         <img src={vdo} alt="Video" className="w-8 h-8 mx-auto mb-2 group-hover:filter group-hover:brightness-0 group-hover:invert" />
                         <p className="font-medium text-gray-700 group-hover:text-white">Video Call</p>
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
